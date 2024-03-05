@@ -14,9 +14,11 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //ProductTest();
+             ProductTest();
 
-            CategoryTest();
+            //CategoryTest();
+
+
         }
 
         private static void CategoryTest()
@@ -32,9 +34,9 @@ namespace ConsoleApp1
         private static void ProductTest()
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
-            foreach (var item in productManager.GetAllByUnitPrice(80, 100))
+            foreach (var item in productManager.GetProductDetails())
             {
-                Console.WriteLine(item.ProductName);
+                Console.WriteLine(item.ProductName + "  /  " + item.CategoryName);
             }
         }
     }

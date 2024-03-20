@@ -17,7 +17,7 @@ namespace DataAccess.Concrete.EntityFramework
             optionsBuilder.UseSqlServer(@"Server=(localdb)\ProjectModels;Database=master;Trusted_Connection=true");
         }
         public DbSet<Product> Products { get; set; }
-        public DbSet<Category>? Categories { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public DbSet<Customer> Customer { get; set; }
 
         public DbSet<Order>? Orders { get; set; }

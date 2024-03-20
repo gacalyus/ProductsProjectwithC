@@ -8,6 +8,8 @@ namespace Core.Utilities.Results
 {
     public class Result : IResult
     {
+        private bool v1;
+        private string v2;
 
         public Result(bool success, string message) : this(success)
         {
@@ -21,5 +23,6 @@ namespace Core.Utilities.Results
         public bool Success { get; }
 
         public string Message { get; }
+
     }
 }

@@ -25,6 +25,7 @@ namespace ConsoleApp1
             foreach (var category in categoryManager.GetAll())
             {
                 Console.WriteLine(category.CategoryName);
+
             }
         }
 

@@ -14,7 +14,7 @@ namespace DataAccess.Concrete.EntityFramework
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=NewDatabase;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\ProjectModels;Database=master;Trusted_Connection=true");
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category>? Categories { get; set; }

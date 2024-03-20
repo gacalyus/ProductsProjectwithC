@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp
+namespace Core.Utilities.Results
 {
-    internal class Program
+    public interface IDataResult<T> : IResult
     {
-        static void Main(string[] args)
-        {
-        }
+
+        T Data { get; }
+
     }
 }

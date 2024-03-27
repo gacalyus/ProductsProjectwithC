@@ -32,13 +32,13 @@ namespace ConsoleApp1
         private static void ProductTest()
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
-            var result = productManager.GetAll();
+            var result = productManager.GetProductDetails();
 
             if (result.Success)
             {
                 foreach (var item in result.Data)
                 {
-                    Console.WriteLine(item.ProductName + "--" + item.CategoryId + "--" + item.UnitPrice);
+                    Console.WriteLine(item.CategoryName + "--" + item.ProductName + "--" + item.ProductId  );
                 }
             }
             else

@@ -46,7 +46,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Product>> GetAllByCategoryId(int id)
         {
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == id));
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == id), id + Messages.AllbyCategoryIdListed);
         }
 
         public IDataResult<List<ProductDetailDto>> GetProductDetails()

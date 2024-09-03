@@ -22,7 +22,7 @@ namespace ConsoleApp1
         private static void CategoryTest()
         {
             CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
-            foreach (var category in categoryManager.GetAll())
+            foreach (var category in categoryManager.GetAll().Data)
             {
                 Console.WriteLine(category.CategoryName);
 
@@ -31,14 +31,14 @@ namespace ConsoleApp1
 
         private static void ProductTest()
         {
-            ProductManager productManager = new ProductManager(new EfProductDal());
+            ProductManager productManager = new ProductManager(new EfProductDal(), new CategoryManager(new EfCategoryDal()));
             var result = productManager.GetProductDetails();
 
             if (result.Success)
             {
                 foreach (var item in result.Data)
                 {
-                    Console.WriteLine(item.CategoryName + "--" + item.ProductName + "--" + item.ProductId  );
+                    Console.WriteLine(item.CategoryName + "--" + item.ProductName + "--" + item.ProductId);
                 }
             }
             else

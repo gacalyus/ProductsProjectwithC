@@ -19,7 +19,7 @@ namespace WebAPI1.Controllers
         }
 
         [HttpGet("getall")]
-        public IActionResult GetAll()
+        public IActionResult GetAll() 
         {
 
             var result = _productService.GetAll();

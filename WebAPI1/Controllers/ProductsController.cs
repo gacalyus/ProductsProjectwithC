@@ -1,8 +1,5 @@
 ﻿using Business.Abstract;
-using Business.Concrete;
-using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI1.Controllers
@@ -19,7 +16,7 @@ namespace WebAPI1.Controllers
         }
 
         [HttpGet("getall")]
-        public IActionResult GetAll() 
+        public IActionResult GetAll()
         {
 
             var result = _productService.GetAll();
@@ -47,6 +44,21 @@ namespace WebAPI1.Controllers
         }
 
 
+        [HttpGet("getbycategory")]
+        public IActionResult GetByCategory(int categoryId)
+        {
+
+            var result = _productService.GetAllByCategoryId(categoryId);
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+
+
         [HttpGet("getallbycategoryid")]
         public IActionResult GetAllByCategoryId(int id)
         {
@@ -59,6 +71,7 @@ namespace WebAPI1.Controllers
             }
             return BadRequest(result);
         }
+
 
 
         [HttpGet("getproductdetail")]

@@ -15,7 +15,7 @@ namespace WebAPI1.Controllers
             _categoryService = categoryService;
         }
 
-        [HttpGet("getall")]
+        [HttpGet("getallcategory")]
         public IActionResult GetAll()
         {
 
